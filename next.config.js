@@ -5,6 +5,7 @@ const nextConfig = {
     GRAPH_CMS_TOKEN: process.env.GRAPH_CMS_TOKEN,
     ENDPOINT: process.env.ENDPOINT,
   },
+  ignoreBuildErrors: true,
 };
 
 module.exports = nextConfig;
