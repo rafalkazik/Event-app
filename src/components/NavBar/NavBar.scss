@@ -1,0 +1,40 @@
+@use '../../../styles/colors.scss';
+@use '../../../styles/mixins.scss';
+
+.navbar {
+  display: flex;
+  justify-content: center;
+
+  .navbar__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+
+    .nav-logo__logo-item {
+      font-weight: 600;
+    }
+  }
+
+  .navbar__nav-menu {
+    display: flex;
+    gap: 1rem;
+
+    .nav-menu__item {
+      color: colors.$mainFontColor;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 1rem 2rem;
+    }
+
+    .nav-menu__item--sign-up {
+      color: colors.$mainPurpleColor;
+      background-color: colors.$purpleBoxBackgroundColor;
+      border-radius: 1rem;
+    }
+  }
+}
