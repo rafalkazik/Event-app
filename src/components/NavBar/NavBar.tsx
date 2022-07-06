@@ -3,7 +3,9 @@ const NavBar = () => {
     <nav className='navbar'>
       <div className='navbar__container'>
         <div className='navbar__nav-logo nav-logo'>
-          <h1 className='nav-logo__logo-item'>EventApp</h1>
+          <h1 className='nav-logo__logo-item'>
+            Event<span>App</span>
+          </h1>
         </div>
 
         <div className='navbar__nav-menu'>
