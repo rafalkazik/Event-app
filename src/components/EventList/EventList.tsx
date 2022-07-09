@@ -24,10 +24,16 @@ interface Events {
 
 const EventList = (events: Events) => {
   const eventsList = events.events.events;
+  const [eventsLimit, setEventsLimit] = useState(3);
+
+  const loadMoreEvents = () => {
+    setEventsLimit(eventsLimit + 1);
+  };
 
   return (
     <section className='hero'>
-      <EventItem events={eventsList} />
+      <EventItem events={eventsList} eventsLimit={eventsLimit} />
+      <button onClick={loadMoreEvents}>ADD</button>
     </section>
   );
 };

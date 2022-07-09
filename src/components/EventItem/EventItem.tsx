@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 interface Events {
+  eventsLimit: number;
   events: {
-    events: any;
     id: string;
     title: string;
     slug: string;
@@ -21,16 +21,35 @@ interface Events {
   };
 }
 
+interface EventsItem {
+  id: string;
+  title: string;
+  slug: string;
+  artists: string;
+  description: string;
+  price: number;
+  date: string;
+  thumbnail: {
+    url: string;
+  };
+  categories: {
+    categoryName: string;
+  };
+}
+
 const EventItem = (events: Events) => {
-  const eventsList = events.events;
-  console.log(eventsList);
+  const eventsList: any = events.events;
+  const eventsLimit = events.eventsLimit;
+  console.log(eventsLimit);
   return (
     <section className='hero'>
-      {eventsList.map((item) => (
-        <div key={item.id}>
-          <p>{item.title}</p>
-        </div>
-      ))}
+      {eventsList
+        .map((item: EventsItem) => (
+          <div key={item.id}>
+            <p>{item.title}</p>
+          </div>
+        ))
+        .slice(0, eventsLimit)}
     </section>
   );
 };
