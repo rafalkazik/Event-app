@@ -4,6 +4,7 @@ import { gql, GraphQLClient } from 'graphql-request';
 import { Key, useEffect, useState } from 'react';
 import NavBar from '../src/components/NavBar/NavBar';
 import Hero from '../src/components/Hero/Hero';
+import EventList from '../src/components/EventList/EventList';
 
 export const getStaticProps = async () => {
   const url = process.env.ENDPOINT;
@@ -61,6 +62,8 @@ const Home: NextPage = (events) => {
 
       <NavBar />
       <Hero />
+      {/* @ts-ignore */}
+      <EventList events={events} />
       {/* @ts-ignore */}
       {/* {events.events
         .map((item: { thumbnail: { url: string }; id: Key; title: string }) => (
