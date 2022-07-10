@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { getMonthName } from './EventItem.model';
 
 interface Events {
   eventsLimit: number;
@@ -40,17 +41,36 @@ interface EventsItem {
 const EventItem = (events: Events) => {
   const eventsList: any = events.events;
   const eventsLimit = events.eventsLimit;
-  console.log(eventsLimit);
+
   return (
-    <section className='hero'>
+    <>
       {eventsList
         .map((item: EventsItem) => (
-          <div key={item.id}>
-            <p>{item.title}</p>
+          <div key={item.id} className='event-item'>
+            <div
+              className='event-item__image'
+              style={{ backgroundImage: `url(${item.thumbnail.url})` }}
+            >
+              <div className='event-item__image-data image-data'>
+                <p className='image-data__price'>{`$${item.price}.00`}</p>
+              </div>
+            </div>
+            <div className='event-item__content'>
+              <div className='event-item__event-item-date'>
+                <p className='event-item-date__month'>
+                  {getMonthName(parseInt(item.date.slice(6, 7)))}
+                </p>
+                <p className='event-item-date__day'>{item.date.slice(8, 10)}</p>
+              </div>
+              <div className='event-item__event-item-details event-item-details'>
+                <p className='event-item-details__title'>{item.title}</p>
+                <p className='event-item-details__artists'>{item.artists}</p>
+              </div>
+            </div>
           </div>
         ))
         .slice(0, eventsLimit)}
-    </section>
+    </>
   );
 };
 
