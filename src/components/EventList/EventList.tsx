@@ -31,8 +31,10 @@ const EventList = (events: Events) => {
   };
 
   return (
-    <section className='hero'>
-      <EventItem events={eventsList} eventsLimit={eventsLimit} />
+    <section className='event-list'>
+      <div className='event-list-container'>
+        <EventItem events={eventsList} eventsLimit={eventsLimit} />
+      </div>
       <button onClick={loadMoreEvents}>ADD</button>
     </section>
   );

@@ -13,4 +13,10 @@ html {
   font-size: 10px;
   font-family: 'Poppins', sans-serif;
   color: colors.$mainFontColor;
+  background-color: colors.$secondaryBackgroundColor;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
 }

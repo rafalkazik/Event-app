@@ -1,71 +1,76 @@
 @use '../../../styles/colors.scss';
 @use '../../../styles/mixins.scss';
 
-.hero {
-  display: none;
+.event-item {
+  border: 1px solid colors.$secondaryBorderColor;
+  width: 90vw;
+  max-width: 350px;
+  border-radius: 0.8rem;
 
-  @include mixins.md {
-    display: flex;
-    justify-content: center;
-  }
-
-  .hero__container {
+  .event-item__image {
     width: 100%;
-    height: 100%;
-    min-height: 500px;
-    width: 90vw;
-    max-width: 1400px;
-    border-radius: 0.8rem;
+    height: 200px;
     background-position: 100% 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: 0.5s ease-in-out;
-    position: relative;
+    border-radius: 0.8rem 0.8rem 0 0;
+    padding: 1rem;
 
-    &::before {
-      content: '';
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      bottom: -50px;
-      left: -70px;
-      background-image: url('../../../public/pattern.svg');
-      background-repeat: no-repeat;
-      background-size: 150px;
-      opacity: 0.7;
-      z-index: -1;
+    .event-item__image-data {
+      width: 100%;
+      display: flex;
+      .image-data__price {
+        color: colors.$mainFontColor;
+        padding: 0.7rem 1rem;
+        background-color: colors.$mainBackgroundColor;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .event-item__content {
+    width: 100%;
+    height: 100%;
+    background-color: colors.$mainBackgroundColor;
+    display: flex;
+    padding: 2rem 1rem 2rem 0;
+    align-items: center;
+
+    .event-item__event-item-date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30%;
+      .event-item-date__day {
+        text-transform: uppercase;
+        font-weight: 600;
+        color: colors.$mainFontColor;
+        font-size: 1.4rem;
+      }
+      .event-item-date__month {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: colors.$mainPurpleColor;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .event-item__event-item-details {
+    .event-item-details__title {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: colors.$mainFontColor;
+      font-size: 1.4rem;
     }
 
-    .hero__buttons-container {
-      width: 100%;
-      height: 100%;
-      min-height: 500px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .hero__buttons-item {
-        border: none;
-        background-color: colors.$mainBackgroundColor;
-        margin: 1rem 2.5rem;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        opacity: 0.6;
-        transition: 0.2s ease-in-out;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &:hover {
-          cursor: pointer;
-          opacity: 1;
-        }
-
-        .buttons-item__icon {
-          width: 8px;
-        }
-      }
+    .event-item-details__artists {
+      // text-transform: uppercase;
+      // font-weight: 600;
+      color: colors.$eventArtistsColor;
+      font-size: 1.3rem;
     }
   }
 }
