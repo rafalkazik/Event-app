@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { getMonthName } from './EventItem.model';
+import Link from 'next/link';
 
 interface Events {
   eventsLimit: number;
@@ -52,7 +53,9 @@ const EventItem = (events: Events) => {
               style={{ backgroundImage: `url(${item.thumbnail.url})` }}
             >
               <div className='event-item__image-data image-data'>
-                <p className='image-data__price'>{`$${item.price}.00`}</p>
+                <p className='image-data__price'>
+                  {item.price !== 0 ? `$${item.price}.00` : 'FREE'}
+                </p>
               </div>
             </div>
             <div className='event-item__content'>
@@ -66,6 +69,13 @@ const EventItem = (events: Events) => {
                 <p className='event-item-details__title'>{item.title}</p>
                 <p className='event-item-details__artists'>{item.artists}</p>
               </div>
+            </div>
+            <div className='event-item__show-more-button show-more-button'>
+              <button className='show-more-button__button'>
+                <Link href={`/${item.slug}`}>
+                  <a className='show-more-button__button-link'>show details</a>
+                </Link>
+              </button>
             </div>
           </div>
         ))
