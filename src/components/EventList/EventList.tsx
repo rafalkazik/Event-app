@@ -2,6 +2,7 @@ import { Key, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import EventItem from '../EventItem/EventItem';
+import classNames from 'classnames';
 
 interface Events {
   events: {
@@ -24,10 +25,10 @@ interface Events {
 
 const EventList = (events: Events) => {
   const eventsList = events.events.events;
-  const [eventsLimit, setEventsLimit] = useState(3);
+  const [eventsLimit, setEventsLimit] = useState(6);
 
   const loadMoreEvents = () => {
-    setEventsLimit(eventsLimit + 1);
+    setEventsLimit(eventsLimit + 3);
   };
 
   return (
@@ -35,7 +36,15 @@ const EventList = (events: Events) => {
       <div className='event-list-container'>
         <EventItem events={eventsList} eventsLimit={eventsLimit} />
       </div>
-      <button onClick={loadMoreEvents}>ADD</button>
+      <button
+        onClick={loadMoreEvents}
+        className={classNames('event-list__button', {
+          'event-list__button--disabled': eventsLimit >= eventsList.length,
+        })}
+        disabled={eventsLimit >= eventsList.length ? true : false}
+      >
+        show more
+      </button>
     </section>
   );
 };

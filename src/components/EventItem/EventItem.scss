@@ -4,8 +4,17 @@
 .event-item {
   border: 1px solid colors.$secondaryBorderColor;
   width: 90vw;
-  max-width: 350px;
+  max-width: 450px;
   border-radius: 0.8rem;
+
+  @include mixins.md {
+    max-width: 48%;
+    margin-top: 3rem;
+  }
+
+  @include mixins.lg {
+    max-width: 32%;
+  }
 
   .event-item__image {
     width: 100%;
@@ -19,6 +28,7 @@
     .event-item__image-data {
       width: 100%;
       display: flex;
+
       .image-data__price {
         color: colors.$mainFontColor;
         padding: 0.7rem 1rem;
@@ -43,6 +53,7 @@
       flex-direction: column;
       align-items: center;
       width: 30%;
+
       .event-item-date__day {
         text-transform: uppercase;
         font-weight: 600;
@@ -58,7 +69,52 @@
     }
   }
 
+  .event-item__show-more-button {
+    background-color: colors.$mainBackgroundColor;
+    border-radius: 0 0 0.8rem 0.8rem;
+    display: flex;
+    justify-content: center;
+
+    .show-more-button__button {
+      width: 90%;
+      background-color: colors.$purpleBoxBackgroundColor;
+      border-radius: 1rem;
+      border: none;
+
+      font-weight: 700;
+
+      transition: 0.3s ease-in-out;
+      margin: 0 0 3rem 0;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+
+      .show-more-button__button-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        padding: 1.5rem 2rem;
+        color: colors.$mainPurpleColor;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: colors.$mainBackgroundColor;
+          cursor: pointer;
+        }
+      }
+      &:hover {
+        background-color: colors.$mainPurpleColor;
+      }
+    }
+  }
+
   .event-item__event-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+
     .event-item-details__title {
       text-transform: uppercase;
       font-weight: 600;
@@ -67,8 +123,6 @@
     }
 
     .event-item-details__artists {
-      // text-transform: uppercase;
-      // font-weight: 600;
       color: colors.$eventArtistsColor;
       font-size: 1.3rem;
     }
