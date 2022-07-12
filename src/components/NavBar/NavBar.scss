@@ -22,6 +22,10 @@
       span {
         color: colors.$mainPurpleColor;
       }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
