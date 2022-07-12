@@ -35,13 +35,14 @@
     border-radius: 1rem;
     border: none;
     color: colors.$mainPurpleColor;
-    font-weight: 700;
+    font-weight: 600;
     padding: 1.5rem 2rem;
     transition: 0.3s ease-in-out;
     margin: 3rem 0;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    font-family: 'Poppins', sans-serif;
 
     &:hover {
       background-color: colors.$mainPurpleColor;
@@ -51,7 +52,6 @@
   }
 
   .event-list__button.event-list__button--disabled {
-    // background-color: red;
     opacity: 0.6;
 
     &:hover {
