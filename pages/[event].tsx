@@ -62,6 +62,12 @@ function EventPage(event: any) {
 
   const imageUrl = currentEvent.thumbnail.url;
 
+  const title = currentEvent.title;
+
+  const artists = currentEvent.artists;
+
+  const date = currentEvent.date;
+
   return (
     <>
       <Head>
@@ -71,7 +77,7 @@ function EventPage(event: any) {
       </Head>
 
       <NavBar />
-      <EventHero image={imageUrl} />
+      <EventHero image={imageUrl} title={title} artists={artists} date={date} />
 
       <div className='event-page'>{currentEvent.title}</div>
     </>
