@@ -1,9 +1,5 @@
 import { gql, GraphQLClient } from 'graphql-request';
 import Head from 'next/head';
-// import MarkdownIt from 'markdown-it';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { useEffect, useState, useRef } from 'react';
 import NavBar from '../src/components/NavBar/NavBar';
 import EventHero from '../src/components/EventHero/EventHero';
 
@@ -71,15 +67,16 @@ function EventPage(event: any) {
   return (
     <>
       <Head>
-        <title>{currentEvent.title}</title>
-        <meta name='description' content={currentEvent.title} />
+        <title>{title}</title>
+        <meta name='description' content={currentEvent.description} />
+        <meta property='og:title' content={title} />
+        <meta property='og:image' content={imageUrl} />
+        <meta property='og:description' content={currentEvent.description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <NavBar />
       <EventHero image={imageUrl} title={title} artists={artists} date={date} />
-
-      <div className='event-page'>{currentEvent.title}</div>
     </>
   );
 }
