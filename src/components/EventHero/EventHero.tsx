@@ -1,5 +1,6 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import { getMonthName } from '../EventItem/EventItem.model';
 
 interface Props {
@@ -22,12 +23,13 @@ const EventHero = ({ image, title, artists, date }: Props) => {
       >
         <div className='event-hero__event-text-container event-text-container'>
           <div className='event-text-container__back-button'>
-            {' '}
             <FontAwesomeIcon
               icon={faArrowLeft}
               className='event-text-container__back-button-icon'
             />
-            <p className='event-text-container__back-button-text'>Back</p>
+            <Link href='/'>
+              <p className='event-text-container__back-button-text'> Back</p>
+            </Link>
           </div>
           <h1 className='event-text-container__title'>{title}</h1>
           <p className='event-text-container__artists'>{artists}</p>
@@ -43,8 +45,20 @@ const EventHero = ({ image, title, artists, date }: Props) => {
               <p className='event-box__year'>{date.slice(0, 4)}</p>
             </div>
             <div className='event-box__buttons-container'>
-              <button>Book event</button>
-              <button>{"organizer's website"}</button>
+              <button className='event-box__button event-box__button--booking'>
+                Book event
+              </button>
+
+              <button className='event-box__button event-box__button--organizer-website'>
+                <a
+                  href='https://www.wp.pl/'
+                  target='_blank'
+                  rel='noreferrer noopener'
+                  className='event-box__button--organizer-website-link'
+                >
+                  {"organizer's website"}
+                </a>
+              </button>
             </div>
           </div>
         </div>
