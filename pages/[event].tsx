@@ -2,6 +2,7 @@ import { gql, GraphQLClient } from 'graphql-request';
 import Head from 'next/head';
 import NavBar from '../src/components/NavBar/NavBar';
 import EventHero from '../src/components/EventHero/EventHero';
+import EventContent from '../src/components/EventContent/EventContent';
 
 export async function getServerSideProps(pageContext: any) {
   const url = process.env.ENDPOINT;
@@ -44,8 +45,6 @@ export async function getServerSideProps(pageContext: any) {
 
   const event = data.event;
 
-  console.log(pageContext.query);
-
   return {
     props: {
       event,
@@ -62,21 +61,25 @@ function EventPage(event: any) {
 
   const artists = currentEvent.artists;
 
+  const description = currentEvent.description;
+
   const date = currentEvent.date;
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name='description' content={currentEvent.description} />
+        <meta name='description' content={description} />
         <meta property='og:title' content={title} />
         <meta property='og:image' content={imageUrl} />
-        <meta property='og:description' content={currentEvent.description} />
+        <meta property='og:description' content={description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <NavBar />
       <EventHero image={imageUrl} title={title} artists={artists} date={date} />
+
+      <EventContent description={description} />
     </>
   );
 }
