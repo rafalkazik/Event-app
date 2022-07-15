@@ -51,7 +51,7 @@ const EventHero = ({ image, title, artists, date }: Props) => {
 
               <button className='event-box__button event-box__button--organizer-website'>
                 <a
-                  href='https://www.wp.pl/'
+                  href='/'
                   target='_blank'
                   rel='noreferrer noopener'
                   className='event-box__button--organizer-website-link'
