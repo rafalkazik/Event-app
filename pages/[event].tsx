@@ -5,13 +5,13 @@ import EventHero from '../src/components/EventHero/EventHero';
 import EventContent from '../src/components/EventContent/EventContent';
 
 export async function getServerSideProps(pageContext: any) {
-  const url = process.env.ENDPOINT;
+  const url = process.env.NEXT_PUBLIC_ENDPOINT;
 
   /* @ts-ignore */
 
   const graphQLClient = new GraphQLClient(url, {
     headers: {
-      Authorization: process.env.GRAPH_CMS_TOKEN,
+      Authorization: process.env.NEXT_PUBLIC_GRAPH_CMS_TOKEN,
     },
   });
 

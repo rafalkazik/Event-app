@@ -7,13 +7,13 @@ import Hero from '../src/components/Hero/Hero';
 import EventList from '../src/components/EventList/EventList';
 
 export const getStaticProps = async () => {
-  const url = process.env.ENDPOINT;
+  const url = process.env.NEXT_PUBLIC_ENDPOINT;
 
   /* @ts-ignore */
 
   const graphQLClient = new GraphQLClient(url, {
     headers: {
-      Authorization: process.env.GRAPH_CMS_TOKEN,
+      Authorization: process.env.NEXT_PUBLIC_GRAPH_CMS_TOKEN,
     },
   });
 
