@@ -1,5 +1,5 @@
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { getMonthName } from '../EventItem/EventItem.model';
 
@@ -23,10 +23,10 @@ const EventHero = ({ image, title, artists, date }: Props) => {
       >
         <div className='event-hero__event-text-container event-text-container'>
           <div className='event-text-container__back-button'>
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               icon={faArrowLeft}
               className='event-text-container__back-button-icon'
-            />
+            /> */}
             <Link href='/'>
               <p className='event-text-container__back-button-text'> Back</p>
             </Link>

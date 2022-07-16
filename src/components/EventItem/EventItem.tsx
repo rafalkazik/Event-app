@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { getMonthName } from './EventItem.model';
 import Link from 'next/link';
 
