@@ -76,9 +76,7 @@ function EventPage(event: any) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <NavBar />
       <EventHero image={imageUrl} title={title} artists={artists} date={date} />
-
       <EventContent description={description} />
     </>
   );
