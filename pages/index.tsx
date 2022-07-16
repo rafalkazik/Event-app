@@ -60,7 +60,6 @@ const Home: NextPage = (events) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <NavBar />
       <Hero />
       {/* @ts-ignore */}
       <EventList events={events} />
