@@ -1,8 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { gql, GraphQLClient } from 'graphql-request';
-import { Key, useEffect, useState } from 'react';
-import NavBar from '../src/components/NavBar/NavBar';
+import { useState } from 'react';
 import Hero from '../src/components/Hero/Hero';
 import EventList from '../src/components/EventList/EventList';
 

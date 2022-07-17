@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = () => {
   const [image, setImage] = useState(1);
@@ -31,16 +31,16 @@ const Hero = () => {
       >
         <div className='hero__buttons-container'>
           <button className='hero__buttons-item' onClick={prevImage}>
-            {/* <FontAwesomeIcon
+            <FontAwesomeIcon
               icon={faAngleLeft}
               className='buttons-item__icon'
-            /> */}
+            />
           </button>
           <button className='hero__buttons-item' onClick={nextImage}>
-            {/* <FontAwesomeIcon
+            <FontAwesomeIcon
               icon={faAngleRight}
               className='buttons-item__icon'
-            /> */}
+            />
           </button>
         </div>
       </div>

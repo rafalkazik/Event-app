@@ -1,6 +1,5 @@
 import { gql, GraphQLClient } from 'graphql-request';
 import Head from 'next/head';
-import NavBar from '../src/components/NavBar/NavBar';
 import EventHero from '../src/components/EventHero/EventHero';
 import EventContent from '../src/components/EventContent/EventContent';
 
